@@ -16,7 +16,7 @@
       e.preventDefault();
       const content = document.getElementById('content').value;
 
-      const response = await fetch('/api/index.js', {
+      const response = await fetch('/k', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ content })
