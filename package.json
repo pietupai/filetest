@@ -1,0 +1,13 @@
+{
+  "name": "oma_filetest",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  },
+  "scripts": {
+    "start": "node api/index.js"
+  }
+}
