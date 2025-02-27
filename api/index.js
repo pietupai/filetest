@@ -3,6 +3,8 @@ import fs from 'fs';
 import path from 'path';
 
 const server = http.createServer(async (req, res) => {
+  console.log(`Received request: ${req.method} ${req.url}`);
+  
   if (req.method === 'GET' && (req.url === '/' || req.url === '/api/index.js')) {
     let filePath = path.join(process.cwd(), 'koe.txt');
     fs.readFile(filePath, 'utf8', (err, data) => {
