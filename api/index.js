@@ -7,7 +7,8 @@ const server = http.createServer(async (req, res) => {
   
   if (req.method === 'GET' && (req.url === '/' || req.url === '/api/index.js')) {
 	console.log("Received request: Branch GET / tai /api/index.js");
-    let filePath = path.join(process.cwd(), 'koe.txt');
+    //let filePath = path.join(process.cwd(), 'koe.txt');
+    let filePath = path.join("/tmp/", 'koe.txt');
     fs.readFile(filePath, 'utf8', (err, data) => {
       if (err) {
         res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -31,7 +32,6 @@ const server = http.createServer(async (req, res) => {
     req.on('end', () => {
       let contentToWrite = JSON.parse(body).content;
       //let filePath = path.join(process.cwd(), 'koe.txt');
-      //let filePath = path.join(process.cwd() + "/tmp/", 'koe.txt');
       let filePath = path.join("/tmp/", 'koe.txt');
       console.log("filePath:", filePath);
       fs.writeFile(filePath, contentToWrite, 'utf8', (err) => {
