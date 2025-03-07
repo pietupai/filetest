@@ -30,7 +30,7 @@ const server = http.createServer(async (req, res) => {
     });
     req.on('end', () => {
       let contentToWrite = JSON.parse(body).content;
-      let filePath = path.join(process.cwd(), 'koe.txt');
+      //let filePath = path.join(process.cwd(), 'koe.txt');
       //let filePath = path.join(process.cwd() + "/tmp/", 'koe.txt');
       let filePath = path.join("/tmp/", 'koe.txt');
       console.log("filePath:", filePath);
